@@ -37,5 +37,40 @@
 *.out
 *.app
 
-# debug information files
+# Debug information files
 *.dwo
+
+# ======================
+# Visual Studio specific
+# ======================
+
+# Build folders
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+
+# Visual Studio cache/options
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+
+# Visual Studio Code workspace files
+.vscode/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Logs
+*.log
+
+# Others
+*.cache
+*.db
+*.opendb
+*.VC.db
