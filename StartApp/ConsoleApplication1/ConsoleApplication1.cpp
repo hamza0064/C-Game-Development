@@ -2,19 +2,56 @@
 //
 
 #include <iostream>
+#include <vector>
 
-int main()
+class Person
 {
-    std::cout << "Hello World!\n";
+	std::string m_name = "hamza";
+	int			m_id = 1;
+	int			m_age = 20;
+	int			m_height = 180;
+public:
+	Person() {}
+	Person(std::string name, int id, int age, int height)
+		: m_name(name), m_id(id), m_age(age), m_height(height)
+	{
+
+	}
+
+	int getId() const {
+		return m_id;
+	}
+	std::string getName()const {
+		return m_name;
+	}
+	int getAge() const {
+		return m_age;
+	}
+	int getHeight() const {
+		return m_height;
+	}
+
+	void print() const {
+		std::cout << "Id: " << m_id << "\n";
+		std::cout << "Name: " << m_name << "\n";
+		std::cout << "Age: " << m_age << "\n";
+		std::cout << "Height: " << m_height << "\n";
+	}
+
+
+};
+
+
+
+int main(int argc, char * argv[])
+{
+
+	Person p1("hamza", 1, 20, 180);
+	Person p2();
+	const Person p3("ali", 2, 22, 175);
+	p3.print();
+	
+    /*auto name = "hamza";
+	std::cout << "Hello " << name << "!\n";
+    std::cout << "Hello World!\n";*/
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
