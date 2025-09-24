@@ -48,7 +48,7 @@ class Course {
 public:
 	Course() {}
 	Course(const std::string& name)
-	: m_name(name)
+		: m_name(name)
 	{
 	}
 
@@ -72,7 +72,7 @@ public:
 
 
 
-int main(int argc, char * argv[])
+int main(int argc, char* argv[])
 {
 
 	Person p1("hamza", 1, 20, 180);
@@ -85,8 +85,9 @@ int main(int argc, char * argv[])
 	c1.addStudent(p3);
 
 	c1.print();
-	
-    /*auto name = "hamza";
+
+	/*auto name = "hamza";
 	std::cout << "Hello " << name << "!\n";
-    std::cout << "Hello World!\n";*/
+	std::cout << "Hello World!\n";*/
 }
+
