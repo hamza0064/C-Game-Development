@@ -4,89 +4,49 @@
 #include <iostream>
 #include <vector>
 
-class Person
+void pp(int & a)
 {
-	std::string m_name = "hamza";
-	int			m_id = 1;
-	int			m_age = 20;
-	int			m_height = 180;
-public:
-	Person() {}
-	Person(std::string name, int id, int age, int height)
-		: m_name(name), m_id(id), m_age(age), m_height(height)
-	{
-
-	}
-
-	int getId() const {
-		return m_id;
-	}
-	std::string getName()const {
-		return m_name;
-	}
-	int getAge() const {
-		return m_age;
-	}
-	int getHeight() const {
-		return m_height;
-	}
-
-	void print() const {
-		std::cout << "Id: " << m_id << "\n";
-		std::cout << "Name: " << m_name << "\n";
-		std::cout << "Age: " << m_age << "\n";
-		std::cout << "Height: " << m_height << "\n";
-	}
-
-
-};
-
-class Course {
-
-	std::string m_name = "Course";
-	std::vector<Person> m_students;
-public:
-	Course() {}
-	Course(const std::string& name)
-	: m_name(name)
-	{
-	}
-
-	void addStudent(const Person& p) {
-		m_students.push_back(p);
-	}
-
-	const std::vector<Person>& getStudents() const {
-		return m_students;
-	}
-
-	void print() const {
-		std::cout << "Course Name: " << m_name << "\n";
-		std::cout << "Students: \n";
-		for (const auto& student : m_students) {
-			student.print();
-			std::cout << "------------------\n";
-		}
-	}
-};
-
+	std::cout << &a << " " << a << " " << sizeof(a) << "\n";
+}
 
 
 int main(int argc, char * argv[])
 {
 
-	Person p1("hamza", 1, 20, 180);
-	Person p2();
-	const Person p3("ali", 2, 22, 175);
-	//p3.print();
+	int a = 10;
+	int b = 25;
 
-	Course c1("C++ Programming");
-	c1.addStudent(p1);
-	c1.addStudent(p3);
+	int* pa = &a; //Pointer to a  and passing reference
+	int* pb = &b; //Pointer to b  and passing reference
 
-	c1.print();
+	*(pb - 1) = 15; //Changing value of a using pointer
+
+	pp(a);
+	pp(b);
+
+	//int a = 10; //Stack memory
+	//int b = 25;
+
+	//int arr[5] = {1,2,3,4,5};
+	////int * heapArr = new int[5]; //Heap memory
+
+	//for (size_t i = 0; i < 5; i++)
+	//{
+	//	pp(arr[i]);
+	//}
+	/*for (size_t i = 0; i < 5; i++)
+	{
+		pp(heapArr[i]);
+	}*/
 	
-    /*auto name = "hamza";
-	std::cout << "Hello " << name << "!\n";
-    std::cout << "Hello World!\n";*/
+	/*pp(a);
+	pp(b);*/
+
+	//Pointer example -----
+	//std::string food = "Pizza";
+	//std::string& meal = food;
+	//meal += " is the best!";
+	//std::cout << food << "\n";  // Outputs Pizza
+	//std::cout << meal << "\n";  // Outputs Pizza
+	return 0;
 }
